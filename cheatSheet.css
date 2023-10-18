@@ -1,0 +1,139 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color1: white;
+    /* --color2: #1d2237; */
+    --color3: #eabb87;
+    --color5: #aaadc0;
+    --color2: #1e2643;
+    /* --color3: #b16d44; */
+    --color4: #1e1e2c;
+    --html-color: #e44b23;
+    --css-color: #563d7c;
+    --js-color: #f1e05a;
+    --color1-alpha: #ffffff66;
+}
+body {
+    background: linear-gradient(
+        var(--color3),
+        var(--color5),
+        var(--color2)
+    );
+    /* height: 100vh; */
+    display: flex;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 15%;
+    min-width: 100px;
+    max-width: 180px;
+    background-color: var(--color1-alpha);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.nav_position {
+    width: 15%;
+    min-width: 100px;
+    max-width: 180px;
+}
+.logo_link {
+    margin-top: 3rem;
+    text-align: center;
+}
+.logo {
+    width: 65%;
+    border: 3px solid var(--color2);
+    border-radius: 50%;
+    margin: auto;
+}
+.navbar ul {
+    width: 100%;
+    margin-top: 10%;
+}
+.navbar ul li a {
+    display: block;
+    padding: 5% 10%;
+}
+.link {
+    text-decoration: none;
+    color: var(--color2);
+    font-size: 1rem;
+    text-align: center;
+}
+.link:hover {
+    border: 3px solid var(--color2);
+    background-color: #1e264366;
+    font-size: 1.2rem;
+}
+.content {
+    margin: 0 auto;
+    padding: 3%;
+    width: 80%;
+    max-width: 1000px;
+    column-count: 3;
+}
+/* .content {
+    margin: 0 auto;
+    padding: 3%;
+    width: 80%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    justify-content: center;
+    float: inline-start;
+} */
+.card {
+    background-color: var(--color1-alpha);
+    border: 5px solid var(--color1);
+    border-radius: 10px;
+    margin: 0 1rem;
+    padding: 1rem;
+    break-inside: avoid-column;
+    margin-bottom: 1rem;
+}
+.card_title {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color: var(--color2);
+    margin-bottom: 1%;
+}
+.card_code {
+    font-size: 1rem;
+    font-family: monospace;
+    color: var(--color4);
+    padding: 1% 0;
+    padding-left: 1%;
+    background-color: var(--color1-alpha);
+    border-radius: 5px;
+}
+.card_ds {
+    font-size: 1rem;
+    color: var(--color4);
+    margin: 1% 0;
+    padding: 0 2%;
+}
+/* .card_ds::before {
+    content: "-- ";
+} */
+@media (max-width: 820px) {
+    .content {
+        column-count: 2;
+    }
+}
+@media (max-width: 576px) {
+    html {
+        font-size: 10px;
+    }
+    .content {
+        column-count: 1;
+    }
+}
