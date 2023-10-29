@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" 
+              href="cheatSheet.css">
+        <link rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+        <title>NormiCoding-HTML</title>
+        <link rel="icon" href="images/NORMI_logo.jpg">
+    </head>
+    <body>
+        <nav class="navbar">
+            <a class="logo_link" href="index.html"><img class="logo" src="images/NORMI_logo.jpg" alt="logo"></a>
+            <ul>
+                <li><a class="link" href="cheatSheet_html.html">HTML</a></li>
+                <li><a class="link" href="#" style="background-color: #563d7c66; border: 3px solid #563d7c">CSS</a></li>
+                <li><a class="link" href="#">JavaScript</a></li>
+            </ul>
+        </nav>
+        <div class="nav_position"></div>
+        <div class="content">
+            <div class="card">
+                <div class="card_title">CSS Syntax</div>
+                <div class="hline"></div>
+                <div class="card_code">selector {<br>&emsp;property1: value1;<br>&emsp;property2: value2;<br>&emsp;...<br>&emsp;...<br>}</div>
+                <div class="card_ds">CSS, or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in HTML. It controls the layout, formatting, and overall appearance of a webpage, allowing developers to define styles for various elements.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">CSS Comments</div>
+                <div class="hline"></div>
+                <div class="card_code">/* ... */</div>
+                <div class="card_ds">Single line comment.</div>
+                <div class="hline"></div>
+                <div class="card_code">/*...<br>&emsp; ...*/</div>
+                <div class="card_ds">Multiple lines comment.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Selectors</div>
+                <div class="hline"></div>
+                <div class="card_code">p {...}</div>
+                <div class="card_ds">Name selector, name is the elements in HTML.</div>
+                <div class="hline"></div>
+                <div class="card_code">#myID {...}</div>
+                <div class="card_ds">ID selector, ID is the id attribute of elements in HTML.</div>
+                <div class="hline"></div>
+                <div class="card_code">.myClass {...}</div>
+                <div class="card_ds">Class selector, class is the class attribute of elements in HTML.</div>
+                <div class="hline"></div>
+                <div class="card_code">* {...}</div>
+                <div class="card_ds">Universal selector, mean all the elements in HTML.</div>
+                <div class="hline"></div>
+                <div class="card_code">p, div, span {...}</div>
+                <div class="card_ds">Group selector, mean some of the elements in HTML.</div>
+                <div class="hline"></div>
+                <div class="card_code">div a {...}</div>
+                <div class="card_ds">Descendant selector, the descendant selector matches all elements that are descendants of a specified element.</div>
+                <div class="hline"></div>
+                <div class="card_code">div > a {...}</div>
+                <div class="card_ds">Child selector, the child selector selects all elements that are the children of a specified element.</div>
+                <div class="hline"></div>
+                <div class="card_code">div + a {...}</div>
+                <div class="card_ds">Adjacent sibling selector, the adjacent sibling selector id used to select an element that is directly after another specific element.</div>
+                <div class="hline"></div>
+                <div class="card_code">div ~ a {...}</div>
+                <div class="card_ds">General sibling selector, the general sibling selector selects all elements that are next siblings of a specified element.</div>
+                <div class="hline"></div>
+                <div class="card_code">p::after {...} |<br>::before, ::first-letter, ::first-line, ::marker, ::selection</div>
+                <div class="card_ds">Pseudo element selectors, a CSS pseudo-element id used to style specified parts of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">a:hover {...} |<br>:active, :focus, :link, :visited, :checked, :disabled, :first-of-type, :last-of-type, :not(selector), :nth-of-type(n), :nth-of-type(n)</div>
+                <div class="card_ds">Pseudo class selectors, a pseudo-class is used to define a special state of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">p[attribute] {...} |<br>[attribute=value], [attribute~=valur], [attribute|=value], [attribute^=valur], [attribute$=value], [attribute*=value]</div>
+                <div class="card_ds">Attribute selectors, the attribute selectors is used to select elements with a specified attribute.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Background</div>
+                <div class="hline"></div>
+                <div class="card_code">background: bg-color bg-image position bg-size bg-repeat bg-origin bg-clip bg-attachment;</div>
+                <div class="card_ds">Sets all the background properties in one declaration.</div>
+                <div class="hline"></div>
+                <div class="card_code">background-color: color/ transparent;</div>
+                <div class="card_ds">Sets the background color of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">background-image: URL/ none;</div>
+                <div class="card_ds">Sets the background image for an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">background-repeat: repeat/ repeat-x/ repeat-y/ no-repeat;</div>
+                <div class="card_ds">Sets how a background image will be repeated. By default, the background-image property repeats an image both horizontally and vertically.</div>
+                <div class="hline"></div>
+                <div class="card_code">background-position: left top/ left center/ left bottom/ right top/ right center/ right bottom/ center top/ center center/ center bottom/ x%y%/ xpos ypos;</div>
+                <div class="card_ds">Sets the starting position of a background image.</div>
+                <div class="hline"></div>
+                <div class="card_code">background-attachment: scroll/ fixed/ local;</div>
+                <div class="card_ds">Sets whether a background image is fixed or scrolls with the rest of the page.</div>
+                <div class="hline"></div>
+                <div class="card_code">background-size: auto/ length/ cover/ contain;</div>
+                <div class="card_ds">Specifies the size of the background image.</div>
+                <div class="hline"></div>
+                <div class="card_code">background-clip: border-box/ padding-box/ content-box;</div>
+                <div class="card_ds">Specifies the painting area of the background.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Borders</div>
+                <div class="hline"></div>
+                <div class="card_code">border: border-width border-style border-color;</div>
+                <div class="card_ds">Sets all the border properties in one declaration.</div>
+                <div class="hline"></div>
+                <div class="card_code">border-width: medium/ thick/ thin/ length;</div>
+                <div class="card_ds">Sets the width of the four borders.</div>
+                <div class="hline"></div>
+                <div class="card_code">border-style: dotted/ dashed/ solid/ double/ groove/ ridge/ inset/ outset/ hidden/ none;</div>
+                <div class="card_ds">Sets the style of the four borders.</div>
+                <div class="hline"></div>
+                <div class="card_code">border-color: color/ transparent;</div>
+                <div class="card_ds">Sets the color of the four borders.</div>
+                <div class="hline"></div>
+                <div class="card_code">border-radius: length/ %;</div>
+                <div class="card_ds">Sets all the four border radius properties for rounded cornres.</div>
+                <div class="card_cal">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    <div>
+                        <div class="card_code">border-top/ border-left/ border-bottom/ border-right</div>
+                        <div class="card_ds">All the border properties can add the direction to specifies the style of differe direction borders.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_title">Margins</div>
+                <div class="hline"></div>
+                <div class="card_code">margin: length/ auto;</div>
+                <div class="card_ds">This property is used to create space around elements, outside of any defined borders.</div>
+                <div class="card_cal">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    <div>
+                        <div class="card_code">margin-top/ margin-left/ margin-bottom/ margin-right</div>
+                        <div class="card_ds">The margin property can add the direction to specifies the width of differe direction margins.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_title">Paddings</div>
+                <div class="hline"></div>
+                <div class="card_code">padding: length;</div>
+                <div class="card_ds">This property is used to create space around element's content, inside of any defined borders.</div>
+                <div class="card_cal">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    <div>
+                        <div class="card_code">padding-top/ padding-left/ padding-bottom/ padding-right</div>
+                        <div class="card_ds">The padding property can add the direction to specifies the width of differe direction padding.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_title">Visibility</div>
+                <div class="hline"></div>
+                <div class="card_code">visibility: visible/ hidden/ collapse;</div>
+                <div class="card_ds">Specifies whether or not an element should be visible.</div>
+                <div class="hline"></div>
+                <div class="card_code">display: inline/ block/ grid/ contents/ flex/ inline-block/ inline-flex/ inline-grid/ inline-table/ list-item/ run-in/ table/ none;</div>
+                <div class="card_ds">Specifies how an element is displayed.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Dimensions</div>
+                <div class="hline"></div>
+                <div class="card_code">height: auto/ length/ %;</div>
+                <div class="card_ds">Sets the height of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">width: auto/ length/ %;</div>
+                <div class="card_ds">Sets the width of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">max-height: none/ length/ %;</div>
+                <div class="card_ds">Sets the maximum height of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">max-width: none/ length/ %;</div>
+                <div class="card_ds">Sets the maximum width of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">min-height: length/ %;</div>
+                <div class="card_ds">Sets the minimum height of an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">min-width: length/ %;</div>
+                <div class="card_ds">Sets the minimum width of an element.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Positions</div>
+                <div class="hline"></div>
+                <div class="card_code">position: static/ absolute/ fixed/ relative/ sticky;</div>
+                <div class="card_ds">Specifies the type of positioning method used for an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">top: auto/ length/ %;</div>
+                <div class="card_ds">Sets the top margin edge for a positioned box.</div>
+                <div class="hline"></div>
+                <div class="card_code">left: auto/ length/ %;</div>
+                <div class="card_ds">Sets the left margin edge for a positioned box.</div>
+                <div class="hline"></div>
+                <div class="card_code">bottom: auto/ length/ %;</div>
+                <div class="card_ds">Sets the bottom margin edge for a positioned box.</div>
+                <div class="hline"></div>
+                <div class="card_code">right: auto/ length/ %;</div>
+                <div class="card_ds">Sets the right margin edge for a positioned box.</div>
+                <div class="hline"></div>
+                <div class="card_code">float: none/ left/ right;</div>
+                <div class="card_ds">This property is used for positioning and formatting content.</div>
+                <div class="hline"></div>
+                <div class="card_code">clear: none/ left/ right;</div>
+                <div class="card_ds">Sepcifies what should happen with the element that is next to a floating element.</div>
+                <div class="hline"></div>
+                <div class="card_code">clip: auto/ shape;</div>
+                <div class="card_ds">Clips an absolutely positioned element.</div>
+                <div class="hline"></div>
+                <div class="card_code">z-index: auto/ number;</div>
+                <div class="card_ds">Specifies the stack order of an element.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Shadow</div>
+                <div class="hline"></div>
+                <div class="card_code">box-shadow: none/ h-offset v-offset blur spread color;</div>
+                <div class="card_ds">Applies one or more shadows to an element.</div>
+                <div class="hline"></div>
+                <div class="card_code">text-shadow: h-offset v-offset blur-radius color;</div>
+                <div class="card_ds">Applies shadow to text.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Text</div>
+                <div class="hline"></div>
+                <div class="card_code">font: font-style font-variant font-weight font-size/line-height font-family/ caption/ icon/ menu/ message-box/ small-caption/ status-bar;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">color: color;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-size: medium/ xx-small/ x-small/ small/ large/ x-large/ xx-large/ smaller/ lager/ length;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-style: normal/ italic/ oblique;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-variant: normal/ small-caps;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-weight: normal/ bold/ bolder/ lighter/ number;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">text-align: left/ right/ center/ justify;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">vertical-align: baseline/ length/ sub/ super/ top/ text-top/ middle/ bottom/ text-bottom;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">text-align-last: auto/ left/ right/ center/ justify/ start/ end;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">direction: ltr/ rtl;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">text-decoration-line: none/ underline/ overline/ line-through;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">text-decoration-style: solid/ double/ dotted/ dashed/ wavy;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+                <div class="hline"></div>
+                <div class="card_code">font-family: family-name/ generic-family;</div>
+                <div class="card_ds"></div>
+            </div>
+            <div class="card">
+                <div class="card_title">Columns</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;iframe&gt; ... &lt;/iframe&gt;</div>
+                <div class="card_ds">Defines an inline frame.</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;video&gt; ... &lt;/video&gt;</div>
+                <div class="card_ds">Defines a vedio.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Overflow</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;iframe&gt; ... &lt;/iframe&gt;</div>
+                <div class="card_ds">Defines an inline frame.</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;video&gt; ... &lt;/video&gt;</div>
+                <div class="card_ds">Defines a vedio.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Transitions</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;iframe&gt; ... &lt;/iframe&gt;</div>
+                <div class="card_ds">Defines an inline frame.</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;video&gt; ... &lt;/video&gt;</div>
+                <div class="card_ds">Defines a vedio.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Flexible</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;iframe&gt; ... &lt;/iframe&gt;</div>
+                <div class="card_ds">Defines an inline frame.</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;video&gt; ... &lt;/video&gt;</div>
+                <div class="card_ds">Defines a vedio.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Grids</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;iframe&gt; ... &lt;/iframe&gt;</div>
+                <div class="card_ds">Defines an inline frame.</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;video&gt; ... &lt;/video&gt;</div>
+                <div class="card_ds">Defines a vedio.</div>
+            </div>
+            <div class="card">
+                <div class="card_title">Animation</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;iframe&gt; ... &lt;/iframe&gt;</div>
+                <div class="card_ds">Defines an inline frame.</div>
+                <div class="hline"></div>
+                <div class="card_code">&lt;video&gt; ... &lt;/video&gt;</div>
+                <div class="card_ds">Defines a vedio.</div>
+            </div>
+        </div>
+    </body>
+</html>
