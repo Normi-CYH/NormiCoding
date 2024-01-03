@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" 
+              href="cheatSheet.css">
+        <link rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+        <title>NormiCoding-Pandas</title>
+        <link rel="icon" href="images/NORMI_logo.jpg">
+    </head>
+    <body>
+        <nav class="navbar">
+            <a class="logo_link" href="index.html"><img class="logo" src="images/NORMI_logo.jpg" alt="logo"></a>
+            <ul>
+                <li><a class="link" href="cheatSheet_css.html">CSS</a></li>
+                <li><a class="link" href="cheatSheet_html.html">HTML</a></li>
+                <li><a class="link" href="#" style="background-color: #3572A566; border: 3px solid #3572A5">Pandas</a></li>
+            </ul>
+        </nav>
+        <div class="nav_position"></div>
+        <div class="content_footer">
+            <div class="content">
+                <div class="card">
+                    <div class="card_title">Tidy Data</div>
+                    <div class="card_ds">A foundation for wrangling in pandas.</div>
+                    <div class="card_ds">Tidy data complements pandas's vectorized operations. Pandas will automatically preserve observations as you manipulate variables. No other format works as intuitively with pandas.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Creating DataFrames</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df = pd.DataFrame(<br>&emsp;{"a":[4, 5, 6],<br>&emsp; "b":[7, 8, 9],<br>&emsp; "c":[10, 11, 12]},<br>&emsp;index=[1, 2, 3])</div>
+                    <div class="card_ds">Specify values for each column.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df = pd.DataFrame(<br>&emsp;[[4, 5, 6],<br>&emsp; [7, 8, 9],<br>&emsp; [10, 11, 12]],<br>&emsp;index=[1, 2, 3],<br>&emsp;columns=['a', 'b', 'c'])</div>
+                    <div class="card_ds">Specify values for each row.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df = pd.DataFrame(<br>&emsp;{"a":[4, 5, 6],<br>&emsp; "b":[7, 8, 9],<br>&emsp; "c":[10, 11, 12]})<br>index = pd.MultiIndex.from_tuples(<br>&emsp;[('d', 1), ('d', 2), ('e', 2)], name=['n', 'v'])</div>
+                    <div class="card_ds">Create DataFrame with a MultiIndex.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Reshaping Data</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.melt(df)</div>
+                    <div class="card_ds">Gather columns into rows.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.pivot(columns='var', values='val')</div>
+                    <div class="card_ds">Spread rows into columns.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.concat([df1, df2])</div>
+                    <div class="card_ds">Append rows of DataFrames.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.concat([df1, df2], axis=1)</div>
+                    <div class="card_ds">Append columns of DataFrame.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.sort_values('column1')</div>
+                    <div class="card_ds">Order rows by values of a column (low to hight).</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.sort_values('column1', ascending=False)</div>
+                    <div class="card_ds">Order rows by values of a column (hight to low).</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.rename(columns={'columnName':'newColumnName'})</div>
+                    <div class="card_ds">Rename the columns of a DataFrame.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.sort_index()</div>
+                    <div class="card_ds">Sort the index of a DataFrame.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.reset_index()</div>
+                    <div class="card_ds">Reset index of DataFrame to row numbers, moving index to columns.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.drop(columns=['column1', 'column2'])</div>
+                    <div class="card_ds">Drop columns from DataFrame.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Subset Observations-rows</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df[df.column1 > 7]</div>
+                    <div class="card_ds">Extract rows that meet logical criteria.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.drop_duplicates()</div>
+                    <div class="card_ds">Remove duplicate rows (only considers columns).</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.sample(frac=0.5)</div>
+                    <div class="card_ds">Randomly select fraction of rows.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.sample(n=10)</div>
+                    <div class="card_ds">Randomly select n rows.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.nlargest(n, 'column1')</div>
+                    <div class="card_ds">Select and order top n entries.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.nsmallest(n, 'column1')</div>
+                    <div class="card_ds">Select and order bottom n entries.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.head(n)</div>
+                    <div class="card_ds">Select first n rows.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.tail(n)</div>
+                    <div class="card_ds">Select last n rows.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Subset Variables-columns</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df[['column1', 'column2', 'column3']]</div>
+                    <div class="card_ds">Select multiple columns with specific names.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df['column1'] <em>or</em> df.column1</div>
+                    <div class="card_ds">Select single column with specific name.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.filter(regex='regex')</div>
+                    <div class="card_ds">Select columns whose name matches regular expression regex.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Subsets-rows and columns</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.loc[:, 'column2':'column4']</div>
+                    <div class="card_ds">Select all rows with all columns between column2 and column4 (inclusive).</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.loc[df['a'] > 10, ['a', 'c']]</div>
+                    <div class="card_ds">Select rows meeting logical condition, and only the specific columns.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.iloc[10:20]</div>
+                    <div class="card_ds">Select rows 10-20.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.iloc[:, [1, 2, 5]]</div>
+                    <div class="card_ds">Select all rows with columns in positions 1, 2 and 5 (first column is 0).</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.at[4, 'column1']</div>
+                    <div class="card_ds">Access single value by label.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.iat[1, 2]</div>
+                    <div class="card_ds">Access single value by index.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Using query</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.query('column1 > 7')<br>df.query('column1 > 7 and column2 < 8')<br>df.query('column1.str.startswith("abc")', engine='python')</div>
+                    <div class="card_ds">query() allows Boolean expressions for filtering rows.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Method Chaining</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df = (pd.melt(df)<br>&emsp;.rename(columns={<br>&emsp;&emsp;'variable':'var',<br>&emsp;&emsp;'value':'val'})<br>&emsp;.query('val >= 200')<br>)</div>
+                    <div class="card_ds">Most pandas methods return a DataFrame so that another pandas method can be applied to the result.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Summarize Data</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df['column1'].value_counts()</div>
+                    <div class="card_ds">Count number of rows with each unique value of variable.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">len(df)</div>
+                    <div class="card_ds">Number of rows in DataFrame.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.shape</div>
+                    <div class="card_ds">Tuple of number of rows and number of columns in DataFrame.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df['column1'].nunique()</div>
+                    <div class="card_ds">Number of distinct values in a column.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.describe()</div>
+                    <div class="card_ds">Basic descriptive and statistics for each column (or GroupBy).</div>
+                    <div class="card_cal">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <div>
+                            <div class="card_ds">Pandas provides a large set of summary functions that operate on different kinds of pandas objects (DataFrame columns, Series, GroupBy, Expanding and Rolling (see below)) and produce single values for each of the groups. When applied to a DataFrame, the result is returned as a pandas Series for each column.</div>
+                        </div>
+                    </div>
+                    <div class="hline"></div>
+                    <div class="card_code">sum()</div>
+                    <div class="card_ds">Sum values of each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">count()</div>
+                    <div class="card_ds">Count non-NA/null values of each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">median()</div>
+                    <div class="card_ds">Median values of each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">quantile([0.25, 0.75])</div>
+                    <div class="card_ds">Quantiles of each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">apply(<em>function</em>)</div>
+                    <div class="card_ds">Apply function to each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">min()</div>
+                    <div class="card_ds">Minimum values in each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">max()</div>
+                    <div class="card_ds">Maximum values in each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">mean()</div>
+                    <div class="card_ds">Mean values of each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">var()</div>
+                    <div class="card_ds">Variance values of each object.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">std()</div>
+                    <div class="card_ds">Standard deviation values of each object.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Handling Missing Data</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.dropna()</div>
+                    <div class="card_ds">Drop rows with any column having NA/null data.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.fillna(value)</div>
+                    <div class="card_ds">Replace all NA/null data with value.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Make New Columns</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.assign(column3=lambda df: df.column1*df.column2)</div>
+                    <div class="card_ds">Compute and append one or more new columns.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df['column4'] = df.column1*df.column2*df.column3</div>
+                    <div class="card_ds">Add single column.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.qcut(df.col, n, labels=False)</div>
+                    <div class="card_ds">Bin column into n buckets.</div>
+                    <div class="card_cal">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <div>
+                            <div class="card_ds">Pandas provides a large set of vector functions that operate on all columns of a DataFrame or a single selected column (a pandas Series). These functions produce vectors of values for each of the columns, or a single Series for the individual Series.</div>
+                        </div>
+                    </div>
+                    <div class="hline"></div>
+                    <div class="card_code">max(axis=1)</div>
+                    <div class="card_ds">Element-wise maximum.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">min(axis=1)</div>
+                    <div class="card_ds">Element-wise minimum.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">clip(lower=-10, upper=10)</div>
+                    <div class="card_ds">Trim values at input thresholds.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">abs()</div>
+                    <div class="card_ds">Absolute value.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Group Data</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.groupby(by="column1")</div>
+                    <div class="card_ds">Return a GroupBy object, grouped by values in column named "column1".</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.groupby(level="ind")</div>
+                    <div class="card_ds">Return a GroupBy object, grouped by values in index level named "ind".</div>
+                    <div class="card_cal">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <div>
+                            <div class="card_ds">All of summary functions listed above can be applied to a group. Additional GroupBy functions:</div>
+                        </div>
+                    </div>
+                    <div class="hline"></div>
+                    <div class="card_code">size()</div>
+                    <div class="card_ds">Size of each group.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">agg(<em>function</em>)</div>
+                    <div class="card_ds">Aggregate group using function.</div>
+                    <div class="card_cal">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <div>
+                            <div class="card_ds">The examples below can also be applied to groups. In this case, the function is applied on a per-group basis, and the returned vectors are of the length of the original DataFrame.</div>
+                        </div>
+                    </div>
+                    <div class="hline"></div>
+                    <div class="card_code">shift(1)</div>
+                    <div class="card_ds">Copy with values shifted by 1.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">shift(-1)</div>
+                    <div class="card_ds">Copy with values lagged by 1.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">rank(method="dense")</div>
+                    <div class="card_ds">Ranks with no gaps.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">rank(method="min")</div>
+                    <div class="card_ds">Ranks. Ties get min rank.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">rank(pct=True)</div>
+                    <div class="card_ds">Ranks rescaled to interval [0, 1].</div>
+                    <div class="hline"></div>
+                    <div class="card_code">rank(method="first")</div>
+                    <div class="card_ds">Ranks. Ties go to first value.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">cumsum()</div>
+                    <div class="card_ds">Cumulative sum.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">cummax()</div>
+                    <div class="card_ds">Cumulative max.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">cummin()</div>
+                    <div class="card_ds">Cumulative min.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">cumprod()</div>
+                    <div class="card_ds">Cumulative product.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Combine Data Sets</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.merge(df1, df2)</div>
+                    <div class="card_ds">Rows that appear in both df1 and df2 (intersection).</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.merge(df1, df2, how='outer')</div>
+                    <div class="card_ds">Rows that appear in either or both df1 and df2 (Union).</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.merge(df1, df2, how='left', on='column1')</div>
+                    <div class="card_ds">Join matching rows from df2 to df1.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.merge(df1, df2, how='right', on='column1')</div>
+                    <div class="card_ds">Join matching rows from df1 to df2.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.merge(df1, df2, how='inner', on='column1')</div>
+                    <div class="card_ds">Join data. Retain only rows in both sets.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.merge(df1, df2, how='outer', on='column1')</div>
+                    <div class="card_ds">Join data. Retain all values, all rows.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df1[df1.column1.isin(df2.column1)]</div>
+                    <div class="card_ds">All rows in df that have a match in df2.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df1[~df1.column1.isin(df2.column1)]</div>
+                    <div class="card_ds">All rows in df1 that do not have a match in df2.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">pd.merge(df1, df2, how='outer', indicator=True)<br>&emsp;.query('_merge == "left_only"')<br>&emsp;.drop(columns=['_merge'])
+                    </div>
+                    <div class="card_ds">Rows that appear in df1 but not df2 (Setdiff).</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Windows</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.expanding()</div>
+                    <div class="card_ds">Return an Expanding object allowing summary functions to be applied cumulatively.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.rolling(n)</div>
+                    <div class="card_ds">Return a Rolling object allowing summary functions to be applied to windows of length n.</div>
+                </div>
+                <div class="card">
+                    <div class="card_title">Plotting</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.plot.hist()</div>
+                    <div class="card_ds">Histogram for each column.</div>
+                    <div class="hline"></div>
+                    <div class="card_code">df.plot.scatter(x='column1', y='column2')</div>
+                    <div class="card_ds">Scatter chart using pairs of points.</div>
+                </div>
+            </div>
+            <footer>
+                <ul>
+                    <li>Reference:</li>
+                    <li><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" target="_blank">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></li>
+                </ul>
+            </footer>
+        </div>
+    </body>
+</html>

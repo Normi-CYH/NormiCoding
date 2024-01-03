@@ -2,6 +2,7 @@
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 :root {
     --color1: white;
@@ -14,6 +15,7 @@
     --html-color: #e44b23;
     --css-color: #563d7c;
     --js-color: #f1e05a;
+    --pandas-color: #3572A5;
     --color1-alpha: #ffffff66;
 }
 body {
@@ -29,7 +31,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 15%;
     min-width: 100px;
     max-width: 180px;
@@ -64,15 +66,17 @@ body {
     padding: 5% 10%;
 }
 .link {
+    border: 3px solid transparent;
     text-decoration: none;
     color: var(--color2);
     font-size: 1rem;
     text-align: center;
+    transition: all 0.2s ease-in;
 }
 .link:hover {
     border: 3px solid var(--color2);
     background-color: #1e264366;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .content_footer {
     width: 100%;
@@ -80,8 +84,8 @@ body {
 .content {
     margin: 0 auto;
     padding: 3%;
-    width: 80%;
-    max-width: 1000px;
+    width: 85%;
+    /* max-width: 1000px; */
     column-count: 3;
 }
 /* .content {
@@ -113,16 +117,18 @@ body {
     font-size: 1rem;
     font-family: monospace;
     color: var(--color4);
-    padding: 1% 0;
-    padding-left: 1%;
+    padding: 1% 2%;
+    /* padding-left: 1%; */
     background-color: var(--color1-alpha);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    word-break: break-all;
 }
 .card_ds {
     font-size: 1rem;
     color: var(--color4);
     margin: 1% 0;
+    margin-bottom: 3%;
     padding: 0 2%;
 }
 .card_cal {
@@ -143,7 +149,7 @@ body {
 }
 .hline {
     border: 2px solid var(--color1);
-    width: 98.5%;
+    width: 100%;
     /* margin-bottom: 1%; */
     border-radius: 10px;
 }
@@ -176,16 +182,42 @@ footer a:hover {
 /* .card_ds::before {
     content: "-- ";
 } */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .content {
         column-count: 2;
     }
 }
-@media (max-width: 576px) {
+@media (max-width: 750px) {
+    html {
+        /* font-size: 10px; */
+    }
+    .content {
+        column-count: 1;
+    }
+}
+@media (max-width: 750px) {
+    html {
+        /* font-size: 10px; */
+    }
+    .content {
+        column-count: 1;
+    }
+}
+@media (max-width: 450px) {
     html {
         font-size: 10px;
     }
     .content {
         column-count: 1;
+    }
+    .navbar {
+        width: 10%;
+        min-width: 80px;
+        max-width: 120px;
+    }
+    .nav_position {
+        width: 10%;
+        min-width: 80px;
+        max-width: 120px;
     }
 }

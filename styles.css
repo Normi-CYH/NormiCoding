@@ -14,6 +14,7 @@
     --html-color: #e44b23;
     --css-color: #563d7c;
     --js-color: #f1e05a;
+    --pandas-color: #3572A5;
     --color1-alpha: #ffffff99;
 }
 body {
@@ -140,9 +141,9 @@ body {
     background-color: #563d7c99;
     border: 10px solid #563d7c;
 }
-.js:hover {
-    background-color: #f1e05a99;
-    border: 10px solid #f1e05a;
+.pandas:hover {
+    background-color: #3572A599;
+    border: 10px solid #3572A5;
 }
 #about {
     /* width: 100%; */
